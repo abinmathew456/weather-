@@ -23,10 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState>{
       {
         emit(AuthError('Password cannot be empty!'));
       } else {
-        final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-        await prefs.setBool('lodinStatus', true);
-        emit(AuthSuccessful());
+       
          if(event.email=="thoughtbox@google.com"&&event.password=="Test@123456") {
            final SharedPreferences prefs = await SharedPreferences.getInstance();
 
